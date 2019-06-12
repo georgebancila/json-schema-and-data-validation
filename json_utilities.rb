@@ -3,7 +3,7 @@
 module JsonUtilities
   module_function
 
-  def verify_last_response_schema(json_response_file, args = {})
+  def verify_last_response(json_response_file, args = {})
     raw_response = File.read(SHARED_DIR.join(json_response_file))
     expected_response = format(raw_response, args)
     result = JsonUtilities.check_json_equality(JSON.parse(last_body), JSON.parse(expected_response))
