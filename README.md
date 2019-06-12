@@ -8,7 +8,7 @@ You can validate based on structure (if they have the same keys) or you can chec
 The small inconvenient is that for this version you have to specify the values in a Hash using sintax similar to this.
 
 ````
-  verify_last_response_schema('responses/get_message.json',
+  verify_last_response('responses/get_message.json',
                                   id: "id:#{@message_id}",
                                   message: "message:#{@message}")
 ````
