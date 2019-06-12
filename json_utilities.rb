@@ -6,7 +6,7 @@ module JsonUtilities
   def verify_last_response(json_response_file, args = {})
     raw_response = File.read(SHARED_DIR.join(json_response_file))
     expected_response = format(raw_response, args)
-    result = JsonUtilities.check_json_equality(JSON.parse(last_body), JSON.parse(expected_response))
+    result = check_json_equality(JSON.parse(last_body), JSON.parse(expected_response))
     expect(result).to be true
   end
 
